@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "associatedS3Resources": {
+                    "description": "The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie. ",
+                    "items": {
+                        "description": "Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions. ",
+                        "properties": {
+                            "bucketName": {
+                                "description": "The name of the S3 bucket.",
+                                "maxLength": 500,
+                                "type": "string"
+                            },
+                            "prefix": {
+                                "description": "The prefix of the S3 bucket. ",
+                                "maxLength": 10000,
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "bucketName"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "memberAccountId": {
+                    "description": "The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie. ",
+                    "pattern": "[0-9]{12}",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "associatedS3Resources"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

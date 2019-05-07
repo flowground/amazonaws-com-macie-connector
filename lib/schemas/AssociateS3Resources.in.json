@@ -1,0 +1,103 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "memberAccountId": {
+                    "description": "The ID of the Amazon Macie member account whose resources you want to associate with Macie. ",
+                    "pattern": "[0-9]{12}",
+                    "type": "string"
+                },
+                "s3Resources": {
+                    "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. ",
+                    "items": {
+                        "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. ",
+                        "properties": {
+                            "bucketName": {
+                                "description": "The name of the S3 bucket that you want to associate with Amazon Macie.",
+                                "maxLength": 500,
+                                "type": "string"
+                            },
+                            "classificationType": {
+                                "description": "The classification type that you want to specify for the resource associated with Amazon Macie. ",
+                                "properties": {
+                                    "continuous": {
+                                        "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                        "enum": [
+                                            "FULL"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "oneTime": {
+                                        "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                        "enum": [
+                                            "FULL",
+                                            "NONE"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "oneTime",
+                                    "continuous"
+                                ],
+                                "type": "object"
+                            },
+                            "prefix": {
+                                "description": "The prefix of the S3 bucket that you want to associate with Amazon Macie.",
+                                "maxLength": 10000,
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "bucketName",
+                            "classificationType"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "s3Resources"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

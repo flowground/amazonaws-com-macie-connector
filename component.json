@@ -1,0 +1,159 @@
+{
+    "title": "Amazon Macie",
+    "description": "<fullname>Amazon Macie</fullname> <p>Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. Macie recognizes sensitive data such as personally identifiable information (PII) or intellectual property, and provides you with dashboards and alerts that give visibility into how this data is being accessed or moved. For more information, see the <a href=\"https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html\">Macie User Guide</a>. </p>",
+    "docsUrl": "https://aws.amazon.com/macie/",
+    "url": "https://macie.amazonaws.com/",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://macie.amazonaws.com/",
+                    "http://macie.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "AssociateMemberAccount": {
+            "main": "./lib/actions/AssociateMemberAccount.js",
+            "title": "Associates a specified AWS account with Amazon Macie as a member account.",
+            "description": "Associates a specified AWS account with Amazon Macie as a member account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateMemberAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociateS3Resources": {
+            "main": "./lib/actions/AssociateS3Resources.js",
+            "title": "Associates specified S3 resources with Amazon Macie for monitoring and data classification. If memberAccountId isn't specified, the action associates specified S3 resources with Macie for the current master account. If memberAccountId is specified, the action associates specified S3 resources with Macie for the specified member account. ",
+            "description": "Associates specified S3 resources with Amazon Macie for monitoring and data classification. If memberAccountId isn't specified, the action associates specified S3 resources with Macie for the current master account. If memberAccountId is specified, the action associates specified S3 resources with Macie for the specified member account. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateS3Resources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateMemberAccount": {
+            "main": "./lib/actions/DisassociateMemberAccount.js",
+            "title": "Removes the specified member account from Amazon Macie.",
+            "description": "Removes the specified member account from Amazon Macie.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateMemberAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateS3Resources": {
+            "main": "./lib/actions/DisassociateS3Resources.js",
+            "title": "Removes specified S3 resources from being monitored by Amazon Macie. If memberAccountId isn't specified, the action removes specified S3 resources from Macie for the current master account. If memberAccountId is specified, the action removes specified S3 resources from Macie for the specified member account.",
+            "description": "Removes specified S3 resources from being monitored by Amazon Macie. If memberAccountId isn't specified, the action removes specified S3 resources from Macie for the current master account. If memberAccountId is specified, the action removes specified S3 resources from Macie for the specified member account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateS3Resources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListMemberAccounts": {
+            "main": "./lib/actions/ListMemberAccounts.js",
+            "title": "Lists all Amazon Macie member accounts for the current Amazon Macie master account.",
+            "description": "Lists all Amazon Macie member accounts for the current Amazon Macie master account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListMemberAccounts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListS3Resources": {
+            "main": "./lib/actions/ListS3Resources.js",
+            "title": "Lists all the S3 resources associated with Amazon Macie. If memberAccountId isn't specified, the action lists the S3 resources associated with Amazon Macie for the current master account. If memberAccountId is specified, the action lists the S3 resources associated with Amazon Macie for the specified member account. ",
+            "description": "Lists all the S3 resources associated with Amazon Macie. If memberAccountId isn't specified, the action lists the S3 resources associated with Amazon Macie for the current master account. If memberAccountId is specified, the action lists the S3 resources associated with Amazon Macie for the specified member account. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListS3Resources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateS3Resources": {
+            "main": "./lib/actions/UpdateS3Resources.js",
+            "title": "Updates the classification types for the specified S3 resources. If memberAccountId isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie for the current master account. If memberAccountId is specified, the action updates the classification types of the S3 resources associated with Amazon Macie for the specified member account. ",
+            "description": "Updates the classification types for the specified S3 resources. If memberAccountId isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie for the current master account. If memberAccountId is specified, the action updates the classification types of the S3 resources associated with Amazon Macie for the specified member account. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateS3Resources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

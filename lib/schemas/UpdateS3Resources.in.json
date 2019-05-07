@@ -1,0 +1,99 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "memberAccountId": {
+                    "description": "The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update. ",
+                    "pattern": "[0-9]{12}",
+                    "type": "string"
+                },
+                "s3ResourcesUpdate": {
+                    "description": "The S3 resources whose classification types you want to update.",
+                    "items": {
+                        "description": "The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action. ",
+                        "properties": {
+                            "bucketName": {
+                                "description": "The name of the S3 bucket whose classification types you want to update.",
+                                "maxLength": 500,
+                                "type": "string"
+                            },
+                            "classificationTypeUpdate": {
+                                "description": "The classification type that you want to update for the resource associated with Amazon Macie. ",
+                                "properties": {
+                                    "continuous": {
+                                        "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                        "enum": [
+                                            "FULL"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "oneTime": {
+                                        "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                        "enum": [
+                                            "FULL",
+                                            "NONE"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "prefix": {
+                                "description": "The prefix of the S3 bucket whose classification types you want to update.",
+                                "maxLength": 10000,
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "bucketName",
+                            "classificationTypeUpdate"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "s3ResourcesUpdate"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

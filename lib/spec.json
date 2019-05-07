@@ -1,0 +1,2691 @@
+{
+    "openapi": "3.0.0",
+    "servers": [
+        {
+            "url": "https://macie.amazonaws.com/"
+        },
+        {
+            "url": "http://macie.amazonaws.com/"
+        }
+    ],
+    "x-hasEquivalentPaths": true,
+    "info": {
+        "contact": {
+            "email": "mike.ralphson@gmail.com",
+            "name": "Mike Ralphson",
+            "url": "https://github.com/mermade/aws2openapi",
+            "x-twitter": "PermittedSoc"
+        },
+        "description": "<fullname>Amazon Macie</fullname> <p>Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. Macie recognizes sensitive data such as personally identifiable information (PII) or intellectual property, and provides you with dashboards and alerts that give visibility into how this data is being accessed or moved. For more information, see the <a href=\"https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html\">Macie User Guide</a>. </p>",
+        "license": {
+            "name": "Apache 2.0 License",
+            "url": "http://www.apache.org/licenses/"
+        },
+        "termsOfService": "https://aws.amazon.com/service-terms/",
+        "title": "Amazon Macie",
+        "version": "2017-12-19",
+        "x-apiClientRegistration": {
+            "url": "https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct"
+        },
+        "x-apisguru-categories": [
+            "cloud"
+        ],
+        "x-logo": {
+            "backgroundColor": "#FFFFFF",
+            "url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.jpeg"
+        },
+        "x-origin": [
+            {
+                "contentType": "application/json",
+                "converter": {
+                    "url": "https://github.com/mermade/aws2openapi",
+                    "version": "1.0.0"
+                },
+                "url": "https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/macie-2017-12-19.normal.json",
+                "x-apisguru-direct": true
+            }
+        ],
+        "x-preferred": true,
+        "x-providerName": "amazonaws.com",
+        "x-release": "v4",
+        "x-serviceName": "macie"
+    },
+    "externalDocs": {
+        "description": "Amazon Web Services documentation",
+        "url": "https://aws.amazon.com/macie/"
+    },
+    "security": [
+        {
+            "hmac": []
+        }
+    ],
+    "paths": {
+        "/": {
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "Action",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "query",
+                    "name": "Version",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Content-Sha256",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Date",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Algorithm",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Credential",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Security-Token",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Signature",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-SignedHeaders",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "description": "Associates a specified AWS account with Amazon Macie as a member account.",
+                "operationId": "AssociateMemberAccount",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "480": {
+                        "description": "InvalidInputException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "fieldName": {
+                                            "description": "Field that has invalid input",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "481": {
+                        "description": "LimitExceededException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        },
+                                        "resourceType": {
+                                            "description": "Resource type that caused the exception",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "482": {
+                        "description": "InternalException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Internal server error.",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "memberAccountId": {
+                                        "description": "The ID of the AWS account that you want to associate with Amazon Macie as a member account.",
+                                        "pattern": "[0-9]{12}",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "memberAccountId"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            }
+        },
+        "/#AssociateS3Resources": {
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "Action",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "query",
+                    "name": "Version",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Content-Sha256",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Date",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Algorithm",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Credential",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Security-Token",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Signature",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-SignedHeaders",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "description": "Associates specified S3 resources with Amazon Macie for monitoring and data classification. If memberAccountId isn't specified, the action associates specified S3 resources with Macie for the current master account. If memberAccountId is specified, the action associates specified S3 resources with Macie for the specified member account. ",
+                "operationId": "AssociateS3Resources",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "failedS3Resources": {
+                                            "description": "S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item. ",
+                                            "items": {
+                                                "description": "Includes details about the failed S3 resources.",
+                                                "properties": {
+                                                    "errorCode": {
+                                                        "description": "The status code of a failed item.",
+                                                        "maxLength": 10,
+                                                        "type": "string"
+                                                    },
+                                                    "errorMessage": {
+                                                        "description": "The error message of a failed item.",
+                                                        "maxLength": 10000,
+                                                        "type": "string"
+                                                    },
+                                                    "failedItem": {
+                                                        "description": "The failed S3 resources.",
+                                                        "properties": {
+                                                            "bucketName": {
+                                                                "description": "The name of the S3 bucket.",
+                                                                "maxLength": 500,
+                                                                "type": "string"
+                                                            },
+                                                            "prefix": {
+                                                                "description": "The prefix of the S3 bucket. ",
+                                                                "maxLength": 10000,
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "bucketName"
+                                                        ],
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "480": {
+                        "description": "InvalidInputException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "fieldName": {
+                                            "description": "Field that has invalid input",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "481": {
+                        "description": "AccessDeniedException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "You do not have required permissions to access the requested resource.",
+                                    "properties": {
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        },
+                                        "resourceType": {
+                                            "description": "Resource type that caused the exception",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "482": {
+                        "description": "LimitExceededException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        },
+                                        "resourceType": {
+                                            "description": "Resource type that caused the exception",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "483": {
+                        "description": "InternalException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Internal server error.",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "memberAccountId": {
+                                        "description": "The ID of the Amazon Macie member account whose resources you want to associate with Macie. ",
+                                        "pattern": "[0-9]{12}",
+                                        "type": "string"
+                                    },
+                                    "s3Resources": {
+                                        "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. ",
+                                        "items": {
+                                            "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. ",
+                                            "properties": {
+                                                "bucketName": {
+                                                    "description": "The name of the S3 bucket that you want to associate with Amazon Macie.",
+                                                    "maxLength": 500,
+                                                    "type": "string"
+                                                },
+                                                "classificationType": {
+                                                    "description": "The classification type that you want to specify for the resource associated with Amazon Macie. ",
+                                                    "properties": {
+                                                        "continuous": {
+                                                            "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                                            "enum": [
+                                                                "FULL"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "oneTime": {
+                                                            "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                                            "enum": [
+                                                                "FULL",
+                                                                "NONE"
+                                                            ],
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "oneTime",
+                                                        "continuous"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "prefix": {
+                                                    "description": "The prefix of the S3 bucket that you want to associate with Amazon Macie.",
+                                                    "maxLength": 10000,
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "bucketName",
+                                                "classificationType"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+                                    "s3Resources"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            }
+        },
+        "/#DisassociateMemberAccount": {
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "Action",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "query",
+                    "name": "Version",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Content-Sha256",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Date",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Algorithm",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Credential",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Security-Token",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Signature",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-SignedHeaders",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "description": "Removes the specified member account from Amazon Macie.",
+                "operationId": "DisassociateMemberAccount",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "480": {
+                        "description": "InvalidInputException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "fieldName": {
+                                            "description": "Field that has invalid input",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "481": {
+                        "description": "InternalException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Internal server error.",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "memberAccountId": {
+                                        "description": "The ID of the member account that you want to remove from Amazon Macie.",
+                                        "pattern": "[0-9]{12}",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "memberAccountId"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            }
+        },
+        "/#DisassociateS3Resources": {
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "Action",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "query",
+                    "name": "Version",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Content-Sha256",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Date",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Algorithm",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Credential",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Security-Token",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Signature",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-SignedHeaders",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "description": "Removes specified S3 resources from being monitored by Amazon Macie. If memberAccountId isn't specified, the action removes specified S3 resources from Macie for the current master account. If memberAccountId is specified, the action removes specified S3 resources from Macie for the specified member account.",
+                "operationId": "DisassociateS3Resources",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "failedS3Resources": {
+                                            "description": "S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item. ",
+                                            "items": {
+                                                "description": "Includes details about the failed S3 resources.",
+                                                "properties": {
+                                                    "errorCode": {
+                                                        "description": "The status code of a failed item.",
+                                                        "maxLength": 10,
+                                                        "type": "string"
+                                                    },
+                                                    "errorMessage": {
+                                                        "description": "The error message of a failed item.",
+                                                        "maxLength": 10000,
+                                                        "type": "string"
+                                                    },
+                                                    "failedItem": {
+                                                        "description": "The failed S3 resources.",
+                                                        "properties": {
+                                                            "bucketName": {
+                                                                "description": "The name of the S3 bucket.",
+                                                                "maxLength": 500,
+                                                                "type": "string"
+                                                            },
+                                                            "prefix": {
+                                                                "description": "The prefix of the S3 bucket. ",
+                                                                "maxLength": 10000,
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "bucketName"
+                                                        ],
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "480": {
+                        "description": "InvalidInputException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "fieldName": {
+                                            "description": "Field that has invalid input",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "481": {
+                        "description": "AccessDeniedException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "You do not have required permissions to access the requested resource.",
+                                    "properties": {
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        },
+                                        "resourceType": {
+                                            "description": "Resource type that caused the exception",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "482": {
+                        "description": "InternalException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Internal server error.",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "associatedS3Resources": {
+                                        "description": "The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie. ",
+                                        "items": {
+                                            "description": "Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions. ",
+                                            "properties": {
+                                                "bucketName": {
+                                                    "description": "The name of the S3 bucket.",
+                                                    "maxLength": 500,
+                                                    "type": "string"
+                                                },
+                                                "prefix": {
+                                                    "description": "The prefix of the S3 bucket. ",
+                                                    "maxLength": 10000,
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "bucketName"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "memberAccountId": {
+                                        "description": "The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie. ",
+                                        "pattern": "[0-9]{12}",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "associatedS3Resources"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            }
+        },
+        "/#ListMemberAccounts": {
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "Action",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "query",
+                    "name": "Version",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Content-Sha256",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Date",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Algorithm",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Credential",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Security-Token",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Signature",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-SignedHeaders",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "description": "Lists all Amazon Macie member accounts for the current Amazon Macie master account.",
+                "operationId": "ListMemberAccounts",
+                "parameters": [
+                    {
+                        "description": "Pagination limit",
+                        "in": "query",
+                        "name": "maxResults",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pagination token",
+                        "in": "query",
+                        "name": "nextToken",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "memberAccounts": {
+                                            "description": "A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list. ",
+                                            "items": {
+                                                "description": "Contains information about the Amazon Macie member account.",
+                                                "properties": {
+                                                    "accountId": {
+                                                        "description": "The AWS account ID of the Amazon Macie member account.",
+                                                        "pattern": "[0-9]{12}",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "nextToken": {
+                                            "description": "When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. ",
+                                            "maxLength": 500,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "480": {
+                        "description": "InternalException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Internal server error.",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "481": {
+                        "description": "InvalidInputException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "fieldName": {
+                                            "description": "Field that has invalid input",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "maxResults": {
+                                        "description": "Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. ",
+                                        "maximum": 250,
+                                        "type": "integer"
+                                    },
+                                    "nextToken": {
+                                        "description": "Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. ",
+                                        "maxLength": 500,
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            }
+        },
+        "/#ListS3Resources": {
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "Action",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "query",
+                    "name": "Version",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Content-Sha256",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Date",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Algorithm",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Credential",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Security-Token",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Signature",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-SignedHeaders",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "description": "Lists all the S3 resources associated with Amazon Macie. If memberAccountId isn't specified, the action lists the S3 resources associated with Amazon Macie for the current master account. If memberAccountId is specified, the action lists the S3 resources associated with Amazon Macie for the specified member account. ",
+                "operationId": "ListS3Resources",
+                "parameters": [
+                    {
+                        "description": "Pagination limit",
+                        "in": "query",
+                        "name": "maxResults",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pagination token",
+                        "in": "query",
+                        "name": "nextToken",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "nextToken": {
+                                            "description": "When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. ",
+                                            "maxLength": 500,
+                                            "type": "string"
+                                        },
+                                        "s3Resources": {
+                                            "description": "A list of the associated S3 resources returned by the action.",
+                                            "items": {
+                                                "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. ",
+                                                "properties": {
+                                                    "bucketName": {
+                                                        "description": "The name of the S3 bucket that you want to associate with Amazon Macie.",
+                                                        "maxLength": 500,
+                                                        "type": "string"
+                                                    },
+                                                    "classificationType": {
+                                                        "description": "The classification type that you want to specify for the resource associated with Amazon Macie. ",
+                                                        "properties": {
+                                                            "continuous": {
+                                                                "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                                                "enum": [
+                                                                    "FULL"
+                                                                ],
+                                                                "type": "string"
+                                                            },
+                                                            "oneTime": {
+                                                                "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                                                "enum": [
+                                                                    "FULL",
+                                                                    "NONE"
+                                                                ],
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "oneTime",
+                                                            "continuous"
+                                                        ],
+                                                        "type": "object"
+                                                    },
+                                                    "prefix": {
+                                                        "description": "The prefix of the S3 bucket that you want to associate with Amazon Macie.",
+                                                        "maxLength": 10000,
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "bucketName",
+                                                    "classificationType"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "480": {
+                        "description": "InvalidInputException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "fieldName": {
+                                            "description": "Field that has invalid input",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "481": {
+                        "description": "AccessDeniedException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "You do not have required permissions to access the requested resource.",
+                                    "properties": {
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        },
+                                        "resourceType": {
+                                            "description": "Resource type that caused the exception",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "482": {
+                        "description": "InternalException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Internal server error.",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "maxResults": {
+                                        "description": "Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. ",
+                                        "maximum": 250,
+                                        "type": "integer"
+                                    },
+                                    "memberAccountId": {
+                                        "description": "The Amazon Macie member account ID whose associated S3 resources you want to list. ",
+                                        "pattern": "[0-9]{12}",
+                                        "type": "string"
+                                    },
+                                    "nextToken": {
+                                        "description": "Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. ",
+                                        "maxLength": 500,
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            }
+        },
+        "/#UpdateS3Resources": {
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "Action",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "query",
+                    "name": "Version",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Content-Sha256",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Date",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Algorithm",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Credential",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Security-Token",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-Signature",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "in": "header",
+                    "name": "X-Amz-SignedHeaders",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "description": "Updates the classification types for the specified S3 resources. If memberAccountId isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie for the current master account. If memberAccountId is specified, the action updates the classification types of the S3 resources associated with Amazon Macie for the specified member account. ",
+                "operationId": "UpdateS3Resources",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "failedS3Resources": {
+                                            "description": "The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. ",
+                                            "items": {
+                                                "description": "Includes details about the failed S3 resources.",
+                                                "properties": {
+                                                    "errorCode": {
+                                                        "description": "The status code of a failed item.",
+                                                        "maxLength": 10,
+                                                        "type": "string"
+                                                    },
+                                                    "errorMessage": {
+                                                        "description": "The error message of a failed item.",
+                                                        "maxLength": 10000,
+                                                        "type": "string"
+                                                    },
+                                                    "failedItem": {
+                                                        "description": "The failed S3 resources.",
+                                                        "properties": {
+                                                            "bucketName": {
+                                                                "description": "The name of the S3 bucket.",
+                                                                "maxLength": 500,
+                                                                "type": "string"
+                                                            },
+                                                            "prefix": {
+                                                                "description": "The prefix of the S3 bucket. ",
+                                                                "maxLength": 10000,
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "bucketName"
+                                                        ],
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "480": {
+                        "description": "InvalidInputException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "fieldName": {
+                                            "description": "Field that has invalid input",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "481": {
+                        "description": "AccessDeniedException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "You do not have required permissions to access the requested resource.",
+                                    "properties": {
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        },
+                                        "resourceType": {
+                                            "description": "Resource type that caused the exception",
+                                            "maxLength": 1000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "482": {
+                        "description": "InternalException",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Internal server error.",
+                                    "properties": {
+                                        "errorCode": {
+                                            "description": "Error code for the exception",
+                                            "maxLength": 10,
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "memberAccountId": {
+                                        "description": "The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update. ",
+                                        "pattern": "[0-9]{12}",
+                                        "type": "string"
+                                    },
+                                    "s3ResourcesUpdate": {
+                                        "description": "The S3 resources whose classification types you want to update.",
+                                        "items": {
+                                            "description": "The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action. ",
+                                            "properties": {
+                                                "bucketName": {
+                                                    "description": "The name of the S3 bucket whose classification types you want to update.",
+                                                    "maxLength": 500,
+                                                    "type": "string"
+                                                },
+                                                "classificationTypeUpdate": {
+                                                    "description": "The classification type that you want to update for the resource associated with Amazon Macie. ",
+                                                    "properties": {
+                                                        "continuous": {
+                                                            "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                                            "enum": [
+                                                                "FULL"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "oneTime": {
+                                                            "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                                            "enum": [
+                                                                "FULL",
+                                                                "NONE"
+                                                            ],
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "prefix": {
+                                                    "description": "The prefix of the S3 bucket whose classification types you want to update.",
+                                                    "maxLength": 10000,
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "bucketName",
+                                                "classificationTypeUpdate"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+                                    "s3ResourcesUpdate"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AWSAccountId": {
+                "pattern": "[0-9]{12}",
+                "type": "string"
+            },
+            "AccessDeniedException": {
+                "description": "You do not have required permissions to access the requested resource.",
+                "properties": {
+                    "message": {
+                        "maxLength": 10000,
+                        "type": "string"
+                    },
+                    "resourceType": {
+                        "description": "Resource type that caused the exception",
+                        "maxLength": 1000,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AssociateMemberAccountRequest": {
+                "properties": {
+                    "memberAccountId": {
+                        "description": "The ID of the AWS account that you want to associate with Amazon Macie as a member account.",
+                        "pattern": "[0-9]{12}",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "memberAccountId"
+                ],
+                "type": "object"
+            },
+            "AssociateS3ResourcesRequest": {
+                "properties": {
+                    "memberAccountId": {
+                        "description": "The ID of the Amazon Macie member account whose resources you want to associate with Macie. ",
+                        "pattern": "[0-9]{12}",
+                        "type": "string"
+                    },
+                    "s3Resources": {
+                        "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. ",
+                        "items": {
+                            "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. ",
+                            "properties": {
+                                "bucketName": {
+                                    "description": "The name of the S3 bucket that you want to associate with Amazon Macie.",
+                                    "maxLength": 500,
+                                    "type": "string"
+                                },
+                                "classificationType": {
+                                    "description": "The classification type that you want to specify for the resource associated with Amazon Macie. ",
+                                    "properties": {
+                                        "continuous": {
+                                            "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                            "enum": [
+                                                "FULL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "oneTime": {
+                                            "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                            "enum": [
+                                                "FULL",
+                                                "NONE"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "oneTime",
+                                        "continuous"
+                                    ],
+                                    "type": "object"
+                                },
+                                "prefix": {
+                                    "description": "The prefix of the S3 bucket that you want to associate with Amazon Macie.",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucketName",
+                                "classificationType"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "s3Resources"
+                ],
+                "type": "object"
+            },
+            "AssociateS3ResourcesResult": {
+                "properties": {
+                    "failedS3Resources": {
+                        "description": "S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item. ",
+                        "items": {
+                            "description": "Includes details about the failed S3 resources.",
+                            "properties": {
+                                "errorCode": {
+                                    "description": "The status code of a failed item.",
+                                    "maxLength": 10,
+                                    "type": "string"
+                                },
+                                "errorMessage": {
+                                    "description": "The error message of a failed item.",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                },
+                                "failedItem": {
+                                    "description": "The failed S3 resources.",
+                                    "properties": {
+                                        "bucketName": {
+                                            "description": "The name of the S3 bucket.",
+                                            "maxLength": 500,
+                                            "type": "string"
+                                        },
+                                        "prefix": {
+                                            "description": "The prefix of the S3 bucket. ",
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "bucketName"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "BucketName": {
+                "maxLength": 500,
+                "type": "string"
+            },
+            "ClassificationType": {
+                "description": "The classification type that Amazon Macie applies to the associated S3 resources. ",
+                "properties": {
+                    "continuous": {
+                        "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                        "enum": [
+                            "FULL"
+                        ],
+                        "type": "string"
+                    },
+                    "oneTime": {
+                        "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                        "enum": [
+                            "FULL",
+                            "NONE"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "oneTime",
+                    "continuous"
+                ],
+                "type": "object"
+            },
+            "ClassificationTypeUpdate": {
+                "description": "The classification type that Amazon Macie applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified. ",
+                "properties": {
+                    "continuous": {
+                        "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                        "enum": [
+                            "FULL"
+                        ],
+                        "type": "string"
+                    },
+                    "oneTime": {
+                        "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                        "enum": [
+                            "FULL",
+                            "NONE"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "DisassociateMemberAccountRequest": {
+                "properties": {
+                    "memberAccountId": {
+                        "description": "The ID of the member account that you want to remove from Amazon Macie.",
+                        "pattern": "[0-9]{12}",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "memberAccountId"
+                ],
+                "type": "object"
+            },
+            "DisassociateS3ResourcesRequest": {
+                "properties": {
+                    "associatedS3Resources": {
+                        "description": "The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie. ",
+                        "items": {
+                            "description": "Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions. ",
+                            "properties": {
+                                "bucketName": {
+                                    "description": "The name of the S3 bucket.",
+                                    "maxLength": 500,
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "description": "The prefix of the S3 bucket. ",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucketName"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "memberAccountId": {
+                        "description": "The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie. ",
+                        "pattern": "[0-9]{12}",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "associatedS3Resources"
+                ],
+                "type": "object"
+            },
+            "DisassociateS3ResourcesResult": {
+                "properties": {
+                    "failedS3Resources": {
+                        "description": "S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item. ",
+                        "items": {
+                            "description": "Includes details about the failed S3 resources.",
+                            "properties": {
+                                "errorCode": {
+                                    "description": "The status code of a failed item.",
+                                    "maxLength": 10,
+                                    "type": "string"
+                                },
+                                "errorMessage": {
+                                    "description": "The error message of a failed item.",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                },
+                                "failedItem": {
+                                    "description": "The failed S3 resources.",
+                                    "properties": {
+                                        "bucketName": {
+                                            "description": "The name of the S3 bucket.",
+                                            "maxLength": 500,
+                                            "type": "string"
+                                        },
+                                        "prefix": {
+                                            "description": "The prefix of the S3 bucket. ",
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "bucketName"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "ErrorCode": {
+                "description": "Error code for the exception",
+                "maxLength": 10,
+                "type": "string"
+            },
+            "ExceptionMessage": {
+                "maxLength": 10000,
+                "type": "string"
+            },
+            "FailedS3Resource": {
+                "description": "Includes details about the failed S3 resources.",
+                "properties": {
+                    "errorCode": {
+                        "description": "The status code of a failed item.",
+                        "maxLength": 10,
+                        "type": "string"
+                    },
+                    "errorMessage": {
+                        "description": "The error message of a failed item.",
+                        "maxLength": 10000,
+                        "type": "string"
+                    },
+                    "failedItem": {
+                        "description": "The failed S3 resources.",
+                        "properties": {
+                            "bucketName": {
+                                "description": "The name of the S3 bucket.",
+                                "maxLength": 500,
+                                "type": "string"
+                            },
+                            "prefix": {
+                                "description": "The prefix of the S3 bucket. ",
+                                "maxLength": 10000,
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "bucketName"
+                        ],
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            },
+            "FailedS3Resources": {
+                "items": {
+                    "description": "Includes details about the failed S3 resources.",
+                    "properties": {
+                        "errorCode": {
+                            "description": "The status code of a failed item.",
+                            "maxLength": 10,
+                            "type": "string"
+                        },
+                        "errorMessage": {
+                            "description": "The error message of a failed item.",
+                            "maxLength": 10000,
+                            "type": "string"
+                        },
+                        "failedItem": {
+                            "description": "The failed S3 resources.",
+                            "properties": {
+                                "bucketName": {
+                                    "description": "The name of the S3 bucket.",
+                                    "maxLength": 500,
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "description": "The prefix of the S3 bucket. ",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucketName"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "FieldName": {
+                "description": "Field that has invalid input",
+                "maxLength": 1000,
+                "type": "string"
+            },
+            "InternalException": {
+                "description": "Internal server error.",
+                "properties": {
+                    "errorCode": {
+                        "description": "Error code for the exception",
+                        "maxLength": 10,
+                        "type": "string"
+                    },
+                    "message": {
+                        "maxLength": 10000,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "InvalidInputException": {
+                "description": "The request was rejected because an invalid or out-of-range value was supplied for an input parameter. ",
+                "properties": {
+                    "errorCode": {
+                        "description": "Error code for the exception",
+                        "maxLength": 10,
+                        "type": "string"
+                    },
+                    "fieldName": {
+                        "description": "Field that has invalid input",
+                        "maxLength": 1000,
+                        "type": "string"
+                    },
+                    "message": {
+                        "maxLength": 10000,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "LimitExceededException": {
+                "description": "The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. ",
+                "properties": {
+                    "errorCode": {
+                        "description": "Error code for the exception",
+                        "maxLength": 10,
+                        "type": "string"
+                    },
+                    "message": {
+                        "maxLength": 10000,
+                        "type": "string"
+                    },
+                    "resourceType": {
+                        "description": "Resource type that caused the exception",
+                        "maxLength": 1000,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ListMemberAccountsRequest": {
+                "properties": {
+                    "maxResults": {
+                        "description": "Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. ",
+                        "maximum": 250,
+                        "type": "integer"
+                    },
+                    "nextToken": {
+                        "description": "Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. ",
+                        "maxLength": 500,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ListMemberAccountsResult": {
+                "properties": {
+                    "memberAccounts": {
+                        "description": "A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list. ",
+                        "items": {
+                            "description": "Contains information about the Amazon Macie member account.",
+                            "properties": {
+                                "accountId": {
+                                    "description": "The AWS account ID of the Amazon Macie member account.",
+                                    "pattern": "[0-9]{12}",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "nextToken": {
+                        "description": "When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. ",
+                        "maxLength": 500,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ListS3ResourcesRequest": {
+                "properties": {
+                    "maxResults": {
+                        "description": "Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. ",
+                        "maximum": 250,
+                        "type": "integer"
+                    },
+                    "memberAccountId": {
+                        "description": "The Amazon Macie member account ID whose associated S3 resources you want to list. ",
+                        "pattern": "[0-9]{12}",
+                        "type": "string"
+                    },
+                    "nextToken": {
+                        "description": "Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. ",
+                        "maxLength": 500,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ListS3ResourcesResult": {
+                "properties": {
+                    "nextToken": {
+                        "description": "When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. ",
+                        "maxLength": 500,
+                        "type": "string"
+                    },
+                    "s3Resources": {
+                        "description": "A list of the associated S3 resources returned by the action.",
+                        "items": {
+                            "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. ",
+                            "properties": {
+                                "bucketName": {
+                                    "description": "The name of the S3 bucket that you want to associate with Amazon Macie.",
+                                    "maxLength": 500,
+                                    "type": "string"
+                                },
+                                "classificationType": {
+                                    "description": "The classification type that you want to specify for the resource associated with Amazon Macie. ",
+                                    "properties": {
+                                        "continuous": {
+                                            "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                            "enum": [
+                                                "FULL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "oneTime": {
+                                            "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                            "enum": [
+                                                "FULL",
+                                                "NONE"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "oneTime",
+                                        "continuous"
+                                    ],
+                                    "type": "object"
+                                },
+                                "prefix": {
+                                    "description": "The prefix of the S3 bucket that you want to associate with Amazon Macie.",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucketName",
+                                "classificationType"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "MaxResults": {
+                "maximum": 250,
+                "type": "integer"
+            },
+            "MemberAccount": {
+                "description": "Contains information about the Amazon Macie member account.",
+                "properties": {
+                    "accountId": {
+                        "description": "The AWS account ID of the Amazon Macie member account.",
+                        "pattern": "[0-9]{12}",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "MemberAccounts": {
+                "items": {
+                    "description": "Contains information about the Amazon Macie member account.",
+                    "properties": {
+                        "accountId": {
+                            "description": "The AWS account ID of the Amazon Macie member account.",
+                            "pattern": "[0-9]{12}",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "NextToken": {
+                "maxLength": 500,
+                "type": "string"
+            },
+            "Prefix": {
+                "maxLength": 10000,
+                "type": "string"
+            },
+            "ResourceType": {
+                "description": "Resource type that caused the exception",
+                "maxLength": 1000,
+                "type": "string"
+            },
+            "S3ContinuousClassificationType": {
+                "enum": [
+                    "FULL"
+                ],
+                "type": "string"
+            },
+            "S3OneTimeClassificationType": {
+                "enum": [
+                    "FULL",
+                    "NONE"
+                ],
+                "type": "string"
+            },
+            "S3Resource": {
+                "description": "Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions. ",
+                "properties": {
+                    "bucketName": {
+                        "description": "The name of the S3 bucket.",
+                        "maxLength": 500,
+                        "type": "string"
+                    },
+                    "prefix": {
+                        "description": "The prefix of the S3 bucket. ",
+                        "maxLength": 10000,
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bucketName"
+                ],
+                "type": "object"
+            },
+            "S3ResourceClassification": {
+                "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. ",
+                "properties": {
+                    "bucketName": {
+                        "description": "The name of the S3 bucket that you want to associate with Amazon Macie.",
+                        "maxLength": 500,
+                        "type": "string"
+                    },
+                    "classificationType": {
+                        "description": "The classification type that you want to specify for the resource associated with Amazon Macie. ",
+                        "properties": {
+                            "continuous": {
+                                "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                "enum": [
+                                    "FULL"
+                                ],
+                                "type": "string"
+                            },
+                            "oneTime": {
+                                "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                "enum": [
+                                    "FULL",
+                                    "NONE"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "oneTime",
+                            "continuous"
+                        ],
+                        "type": "object"
+                    },
+                    "prefix": {
+                        "description": "The prefix of the S3 bucket that you want to associate with Amazon Macie.",
+                        "maxLength": 10000,
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bucketName",
+                    "classificationType"
+                ],
+                "type": "object"
+            },
+            "S3ResourceClassificationUpdate": {
+                "description": "The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action. ",
+                "properties": {
+                    "bucketName": {
+                        "description": "The name of the S3 bucket whose classification types you want to update.",
+                        "maxLength": 500,
+                        "type": "string"
+                    },
+                    "classificationTypeUpdate": {
+                        "description": "The classification type that you want to update for the resource associated with Amazon Macie. ",
+                        "properties": {
+                            "continuous": {
+                                "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                "enum": [
+                                    "FULL"
+                                ],
+                                "type": "string"
+                            },
+                            "oneTime": {
+                                "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                "enum": [
+                                    "FULL",
+                                    "NONE"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "prefix": {
+                        "description": "The prefix of the S3 bucket whose classification types you want to update.",
+                        "maxLength": 10000,
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bucketName",
+                    "classificationTypeUpdate"
+                ],
+                "type": "object"
+            },
+            "S3Resources": {
+                "items": {
+                    "description": "Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions. ",
+                    "properties": {
+                        "bucketName": {
+                            "description": "The name of the S3 bucket.",
+                            "maxLength": 500,
+                            "type": "string"
+                        },
+                        "prefix": {
+                            "description": "The prefix of the S3 bucket. ",
+                            "maxLength": 10000,
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "bucketName"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "S3ResourcesClassification": {
+                "items": {
+                    "description": "The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action. ",
+                    "properties": {
+                        "bucketName": {
+                            "description": "The name of the S3 bucket that you want to associate with Amazon Macie.",
+                            "maxLength": 500,
+                            "type": "string"
+                        },
+                        "classificationType": {
+                            "description": "The classification type that you want to specify for the resource associated with Amazon Macie. ",
+                            "properties": {
+                                "continuous": {
+                                    "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                    "enum": [
+                                        "FULL"
+                                    ],
+                                    "type": "string"
+                                },
+                                "oneTime": {
+                                    "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                    "enum": [
+                                        "FULL",
+                                        "NONE"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "oneTime",
+                                "continuous"
+                            ],
+                            "type": "object"
+                        },
+                        "prefix": {
+                            "description": "The prefix of the S3 bucket that you want to associate with Amazon Macie.",
+                            "maxLength": 10000,
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "bucketName",
+                        "classificationType"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "S3ResourcesClassificationUpdate": {
+                "items": {
+                    "description": "The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action. ",
+                    "properties": {
+                        "bucketName": {
+                            "description": "The name of the S3 bucket whose classification types you want to update.",
+                            "maxLength": 500,
+                            "type": "string"
+                        },
+                        "classificationTypeUpdate": {
+                            "description": "The classification type that you want to update for the resource associated with Amazon Macie. ",
+                            "properties": {
+                                "continuous": {
+                                    "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                    "enum": [
+                                        "FULL"
+                                    ],
+                                    "type": "string"
+                                },
+                                "oneTime": {
+                                    "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                    "enum": [
+                                        "FULL",
+                                        "NONE"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prefix": {
+                            "description": "The prefix of the S3 bucket whose classification types you want to update.",
+                            "maxLength": 10000,
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "bucketName",
+                        "classificationTypeUpdate"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "UpdateS3ResourcesRequest": {
+                "properties": {
+                    "memberAccountId": {
+                        "description": "The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update. ",
+                        "pattern": "[0-9]{12}",
+                        "type": "string"
+                    },
+                    "s3ResourcesUpdate": {
+                        "description": "The S3 resources whose classification types you want to update.",
+                        "items": {
+                            "description": "The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action. ",
+                            "properties": {
+                                "bucketName": {
+                                    "description": "The name of the S3 bucket whose classification types you want to update.",
+                                    "maxLength": 500,
+                                    "type": "string"
+                                },
+                                "classificationTypeUpdate": {
+                                    "description": "The classification type that you want to update for the resource associated with Amazon Macie. ",
+                                    "properties": {
+                                        "continuous": {
+                                            "description": "A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. ",
+                                            "enum": [
+                                                "FULL"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "oneTime": {
+                                            "description": "A one-time classification of all of the existing objects in a specified S3 bucket. ",
+                                            "enum": [
+                                                "FULL",
+                                                "NONE"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "prefix": {
+                                    "description": "The prefix of the S3 bucket whose classification types you want to update.",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucketName",
+                                "classificationTypeUpdate"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "s3ResourcesUpdate"
+                ],
+                "type": "object"
+            },
+            "UpdateS3ResourcesResult": {
+                "properties": {
+                    "failedS3Resources": {
+                        "description": "The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. ",
+                        "items": {
+                            "description": "Includes details about the failed S3 resources.",
+                            "properties": {
+                                "errorCode": {
+                                    "description": "The status code of a failed item.",
+                                    "maxLength": 10,
+                                    "type": "string"
+                                },
+                                "errorMessage": {
+                                    "description": "The error message of a failed item.",
+                                    "maxLength": 10000,
+                                    "type": "string"
+                                },
+                                "failedItem": {
+                                    "description": "The failed S3 resources.",
+                                    "properties": {
+                                        "bucketName": {
+                                            "description": "The name of the S3 bucket.",
+                                            "maxLength": 500,
+                                            "type": "string"
+                                        },
+                                        "prefix": {
+                                            "description": "The prefix of the S3 bucket. ",
+                                            "maxLength": 10000,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "bucketName"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "parameters": {
+            "Action": {
+                "in": "query",
+                "name": "Action",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "Version": {
+                "in": "query",
+                "name": "Version",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "X-Amz-Algorithm": {
+                "in": "header",
+                "name": "X-Amz-Algorithm",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "X-Amz-Content-Sha256": {
+                "in": "header",
+                "name": "X-Amz-Content-Sha256",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "X-Amz-Credential": {
+                "in": "header",
+                "name": "X-Amz-Credential",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "X-Amz-Date": {
+                "in": "header",
+                "name": "X-Amz-Date",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "X-Amz-Security-Token": {
+                "in": "header",
+                "name": "X-Amz-Security-Token",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "X-Amz-Signature": {
+                "in": "header",
+                "name": "X-Amz-Signature",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "X-Amz-SignedHeaders": {
+                "in": "header",
+                "name": "X-Amz-SignedHeaders",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            }
+        },
+        "securitySchemes": {
+            "hmac": {
+                "description": "Amazon Signature authorization v4",
+                "in": "header",
+                "name": "Authorization",
+                "type": "apiKey",
+                "x-amazon-apigateway-authtype": "awsSigv4"
+            }
+        }
+    }
+}
